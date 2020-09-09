@@ -1,3 +1,5 @@
 new text by branch
 
 some text by master
+
+and some
