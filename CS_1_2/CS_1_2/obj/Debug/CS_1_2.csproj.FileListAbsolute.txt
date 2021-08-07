@@ -1,0 +1,10 @@
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\bin\Debug\CS_1_2.exe.config
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\bin\Debug\CS_1_2.exe
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\bin\Debug\CS_1_2.pdb
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.csprojAssemblyReference.cache
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.Form1.resources
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.Properties.Resources.resources
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.csproj.GenerateResource.cache
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.exe
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.pdb
+C:\Users\37544\Desktop\C#\CS_1_2\CS_1_2\obj\Debug\CS_1_2.csproj.CoreCompileInputs.cache
