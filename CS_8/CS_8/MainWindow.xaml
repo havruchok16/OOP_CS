@@ -1,0 +1,40 @@
+﻿<Window x:Class="CS_8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CS_8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Background" Value="Pink" />
+        </Style>
+
+    </Window.Resources>
+    <StackPanel Background="MistyRose">
+        <DataGrid AutoGenerateColumns="False" x:Name="MyBaseGrid" HorizontalAlignment="Center">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Номер_продажи}" Header="Номер продажи" Foreground="Black" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Клиент}" Header="Клиент" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Товар}" Header="Товар" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Количество_заказанного_товара}" Header="Количество" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Дата_продажи}" Header="Дата продажи" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Click="Procedure_Click" >Процедуры</Button>
+            <Button Click="Delete_Click" >Удалить</Button>
+            <Button Click="Update_Click" >Обновить</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ComboBox x:Name="Script" Height="30" Width="200"/>
+            <Button x:Name="Enter_Script" Content="Запросы" Click="Script_Click" />
+        </StackPanel>
+    </StackPanel>
+</Window>
