@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CS_4_5">
+
+    <Style TargetType="RichTextBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFFAFA" />
+            <Setter Property="Foreground" Value="#FF69B4" />
+        </Style.Setters>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=Font, Path=Text}" Value="Courier New">
+                <Setter Property="Foreground" Value="#000000" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Label">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="#FF69B4" />
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FFFAFA" />
+            <Setter Property="Foreground" Value="#FF69B4" />
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#FF69B4" />
+        </Style.Setters>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.4" To="#FFFAFA"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Duration="0:0:0.4" To="#000000"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

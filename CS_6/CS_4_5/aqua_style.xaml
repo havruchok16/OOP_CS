@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CS_4_5">
+
+    <Style TargetType="RichTextBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#E0FFFF" />
+            <Setter Property="Foreground" Value="#00FFFF" />
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Label">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="#00FFFF" />
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Style.Setters>
+            <Setter Property="Background" Value="#00FFFF" />
+            <Setter Property="Foreground" Value="#000000" />
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Background" Value="#00FFFF" />
+            <Setter Property="Foreground" Value="#E0FFFF" />
+        </Style.Setters>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="#E0FFFF" />
+                    <Setter Property="Foreground" Value="#00FFFF" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>
