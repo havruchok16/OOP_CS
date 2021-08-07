@@ -1,0 +1,90 @@
+﻿<Window x:Class="CS_4_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CS_4_5"
+        mc:Ignorable="d"
+        Title="{DynamicResource Text_Editor}" Height="450" Width="700" Icon="C:\Users\37544\Desktop\C#\CS_4_5\font.png">
+    <Window.Resources>
+        <ResourceDictionary Source="/Dictionary1.xaml"> </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Pink">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Save" Grid.Column="0" Content="{DynamicResource Save}" Click="Save_Click"/>
+            <Button x:Name="Open" Grid.Column="1" Content="{DynamicResource Open}" Click="Open_Click"/>
+            <ComboBox x:Name="Func" Grid.Column="2" SelectionChanged="Func_SelectionChanged" >
+                <TextBlock x:Name="Copy" Text="{DynamicResource Copy}"></TextBlock>
+                <TextBlock x:Name="Paste" Text="{DynamicResource Paste}"></TextBlock>
+                <TextBlock x:Name="Undo" Text="{DynamicResource Undo}"></TextBlock>
+                <TextBlock x:Name="Cut" Text="{DynamicResource Cut}"></TextBlock>
+            </ComboBox>
+
+            <Button x:Name="button_I" Grid.Column="3" Content="I" FontStyle="Italic" Click="button_I_Click" ></Button>
+            <Button x:Name="button_B" Grid.Column="4" Content="B" FontWeight="Bold" Click="button_B_Click" ></Button>
+            <Button x:Name="button_U" Grid.Column="5" Content="U" Click="button_U_Click" ></Button>
+       
+            <ComboBox x:Name="Font" Grid.Column="6">
+                <TextBlock Text="Arial" FontFamily="Arial"></TextBlock>
+                <TextBlock Text="Century Gothic" FontFamily="Century Gothic"></TextBlock>
+                <TextBlock Text="Georgia" FontFamily="Georgia"></TextBlock>
+                <TextBlock Text="Courier New" FontFamily="Courier New"></TextBlock>
+                <TextBlock Text="Monotype Corsiva" FontFamily="Monotype Corsiva"></TextBlock>
+            </ComboBox>
+
+            <ComboBox x:Name="FontColor" Grid.Column="7" SelectionChanged="Color_SelectionChanged">
+                <TextBlock Background="Black" Foreground="black"> 111</TextBlock>
+                <TextBlock Background="Gray" Foreground="gray"> 222</TextBlock>
+                <TextBlock Background="Red" Foreground="red"> 333</TextBlock>
+                <TextBlock Background="Pink" Foreground="pink"> 444</TextBlock>
+                <TextBlock Background="Violet" Foreground="violet"> 555</TextBlock>
+                <TextBlock Background="SkyBlue" Foreground="skyBlue"> 666</TextBlock>
+            </ComboBox>
+            
+            <StackPanel Grid.Column="8" VerticalAlignment="Center" Margin="2">
+                <Slider x:Name="Slider" Minimum="12" Maximum="48" TickPlacement="BottomRight" TickFrequency="2" IsSnapToTickEnabled="True" Ticks="12,14,16,18,20,22,24,26,28,36,48" ValueChanged="Slider_ValueChanged"/>
+            </StackPanel>
+
+            <Button x:Name="lan" Grid.Column="9" Content="{DynamicResource ENG}" Click="language_Click" ></Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <RichTextBox x:Name="MyRichTextBox" Grid.Column="0" Background="LavenderBlush" SpellCheck.IsEnabled="True" Language="ru-ru" AllowDrop="True" DragOver="MyRichTextBox_DragOver" Drop="MyRichTextBox_Drop"
+                         FontFamily="{Binding ElementName=Font, Path=Text, Mode=OneWay, TargetNullValue=Arial, UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="{Binding ElementName=Slider, Path=Value, Mode=OneWay, TargetNullValue=12, UpdateSourceTrigger=PropertyChanged}" TextChanged="MyRichTextBox_TextChanged">
+            </RichTextBox>
+        </Grid>
+        <Grid Grid.Row="2" Background="Pink">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" x:Name="Symbols" Content="{DynamicResource Symbols}"></Label>
+            <Label Grid.Column="1" x:Name="Number">0</Label>
+        </Grid>
+    </Grid>
+</Window>
